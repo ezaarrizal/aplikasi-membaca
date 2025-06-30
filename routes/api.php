@@ -28,6 +28,21 @@ Route::get('/migrate', function () {
     }
 });
 
+Route::get('/seed', function () {
+    try {
+        Artisan::call('db:seed', ['--force' => true]);
+        return response()->json([
+            'status' => '✅ Seeder berhasil dijalankan',
+            'output' => Artisan::output()
+        ]);
+    } catch (\Exception $e) {
+        return response()->json([
+            'status' => '❌ Seeder gagal',
+            'error' => $e->getMessage()
+        ]);
+    }
+});
+
     Route::get('/health', function () {
         try {
             $userCount = \App\Models\User::count();
