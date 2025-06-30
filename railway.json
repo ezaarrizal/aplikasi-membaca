@@ -5,7 +5,6 @@
   "deploy": {
     "numReplicas": 1,
     "restartPolicyType": "ON_FAILURE",
-    "startCommand": "vendor/bin/heroku-php-apache2 public/",
     "healthcheckPath": "/api/v1/health",
     "healthcheckTimeout": 300
   }
