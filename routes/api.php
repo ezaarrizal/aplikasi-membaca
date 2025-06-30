@@ -9,6 +9,14 @@ use App\Http\Controllers\Api\GameController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('v1')->group(function () {
+    Route::get('/check-db', function () {
+    return response()->json([
+        'host' => env('DB_HOST'),
+        'user' => env('DB_USERNAME'),
+        'pass' => env('DB_PASSWORD'),
+        'database' => env('DB_DATABASE'),
+    ]);
+});
     Route::get('/health', function () {
         try {
             $userCount = \App\Models\User::count();
