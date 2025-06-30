@@ -11,11 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('game_questions', function (Blueprint $table) {
-            $table->integer('level')->default(1)->after('question_number'); // Default level 1
-            $table->string('question_type')->nullable()->after('level'); // e.g., 'vocal_fill', 'find_difference', 'drag_match', 'fill_blank'
-            $table->json('options')->nullable()->after('instruction'); // Untuk menyimpan opsi pilihan ganda/kartu
-        });
+        // ✅ DISABLED: Handled by 2025_01_01_000000_fix_game_questions_columns.php
+        // No-op migration to avoid conflicts
+        // Originally added: level, question_type, options columns
     }
 
     /**
@@ -23,8 +21,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('game_questions', function (Blueprint $table) {
-            $table->dropColumn(['level', 'question_type', 'options']);
-        });
+        // No-op
     }
 };

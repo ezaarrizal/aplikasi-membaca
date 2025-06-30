@@ -12,10 +12,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('game_questions', function (Blueprint $table) {
-            // Add word_pattern column for spelling game support
-            $table->string('word_pattern')->nullable()->after('options');
-        });
+        // ✅ DISABLED: Handled by 2025_01_01_000000_fix_game_questions_columns.php
+        // No-op migration to avoid conflicts
     }
 
     /**
@@ -23,8 +21,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('game_questions', function (Blueprint $table) {
-            $table->dropColumn('word_pattern');
-        });
+        // No-op
     }
 };
