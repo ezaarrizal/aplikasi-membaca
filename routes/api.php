@@ -7,6 +7,7 @@ use App\Http\Controllers\Api\UserManagementController;
 use App\Http\Controllers\Api\FeedbackController;
 use App\Http\Controllers\Api\GameController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Artisan;
 
 Route::prefix('v1')->group(function () {
     Route::get('/check-db', function () {
@@ -17,6 +18,16 @@ Route::prefix('v1')->group(function () {
         'database' => env('DB_DATABASE'),
     ]);
 });
+
+Route::get('/migrate', function () {
+    try {
+        Artisan::call('migrate', ['--force' => true]);
+        return '✅ Migrasi berhasil!';
+    } catch (\Exception $e) {
+        return '❌ Error: ' . $e->getMessage();
+    }
+});
+
     Route::get('/health', function () {
         try {
             $userCount = \App\Models\User::count();
