@@ -10,6 +10,12 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Artisan;
 
 Route::prefix('v1')->group(function () {
+    Route::get('/clear-cache', function () {
+    Artisan::call('config:clear');
+    Artisan::call('optimize:clear');
+    return '✅ Cache cleared!';
+});
+
     Route::get('/check-db', function () {
     return response()->json([
         'host' => env('DB_HOST'),

@@ -7,13 +7,10 @@ return [
     'allowed_methods' => ['*'],
 
     'allowed_origins' => [
-        'http://localhost:3000',
-        'https://localhost:3000',
+        'https://charming-haupia-7f4b25.netlify.app',
     ],
 
-    'allowed_origins_patterns' => [
-        '^https:\/\/.*\.netlify\.app$',
-    ],
+    'allowed_origins_patterns' => [],
 
     'allowed_headers' => ['*'],
 
@@ -21,6 +18,5 @@ return [
 
     'max_age' => 0,
 
-    'supports_credentials' => true,
-
+    'supports_credentials' => false,
 ];
