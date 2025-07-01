@@ -7,7 +7,8 @@ return [
     'allowed_methods' => ['*'],
 
     'allowed_origins' => [
-        'https://superlative-maamoul-9286b0.netlify.app',
+        'https://idyllic-sable-9a1095.netlify.app',
+
     ],
 
     'allowed_origins_patterns' => [],
