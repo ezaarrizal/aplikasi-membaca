@@ -8,7 +8,7 @@ return [
 
     'allowed_origins' => [
         'https://timely-croissant-379c97.netlify.app',
-        'https://nimble-cassata-602647.netlify.app',
+        'https://mellifluous-longma-ba0c33.netlify.app',
     ],
 
     'allowed_origins_patterns' => [],
