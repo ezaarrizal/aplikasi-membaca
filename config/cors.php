@@ -9,6 +9,7 @@ return [
     'allowed_origins' => [
         'https://timely-croissant-379c97.netlify.app',
         'https://idyllic-heliotrope-59d937.netlify.app',
+        'https://verdant-gingersnap-82a5d0.netlify.app',
     ],
 
     'allowed_origins_patterns' => [],
